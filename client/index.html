@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="taskHandler.js"></script>
+    <script src="taskHandler.js" defer></script>
     <title>Task list</title>
 </head>
 <body>
 
     <div class="input-container">
-        <input onkeydown="pressKeyHandler()" tabindex="1" type="text" placeholder="Task name">
+        <input tabindex="1" type="text" placeholder="Task name">
         <button tabindex="2" onclick="addTask()">Send</button>
     </div>
 
