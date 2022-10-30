@@ -1,10 +1,10 @@
 const arr = []
 
-function enterPress() {
+function pressKeyHandler() {
     const input = document.querySelector('input')
 
     if(event.key == "Enter") addTask()
-    if(event.key == "Backspace" && arr.length > 0 && !input.value) removeLastEvent()
+    if(event.key == "Backspace" && arr.length > 0 && !input.value) removeRecentTask()
 }
 
 function addTask() {
@@ -30,8 +30,8 @@ function showAddedTasks() {
     arr.map(arrItem => {
         pTextContent += `<li class="${count}" onclick="removeTask(${count})">${arrItem}</li>\n`
         count++
-        // console.log(arr.indexOf(arrItem))
     })
+    
     ul.innerHTML = pTextContent
 }
 
@@ -42,7 +42,7 @@ function removeTask(event) {
     arr.splice(event, 1)
 }
 
-function removeLastEvent() {
+function removeRecentTask() {
     const ulItems = document.querySelectorAll('li')
 
     ulItems[arr.length - 1].remove()
